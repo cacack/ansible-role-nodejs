@@ -10,7 +10,7 @@
     repo: "deb {{nodesource_repo_url}} {{ansible_distribution_release}} main"
     state: present
     update_cache: yes
-    filename: "nodesource"
+    #filename: "nodesource"
 
 - name: Install NodeJS package & dependencies
   apt:

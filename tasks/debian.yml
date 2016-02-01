@@ -1,0 +1,21 @@
+---
+
+- name: Add Nodesource GPG signing key
+  apt_key:
+    url: "{{nodesource_key_url}}"
+    state: present
+
+- name: Add NodeJS APT repository
+  apt_repository:
+    repo: "deb {{nodesource_repo_url}} {{ansible_distribution_release}} main"
+    state: present
+    update_cache: yes
+    filename: "nodesource"
+
+- name: Install NodeJS package & dependencies
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - nodejs
+    - build-essential

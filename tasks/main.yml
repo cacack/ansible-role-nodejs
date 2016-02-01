@@ -1,0 +1,6 @@
+---
+
+- name: Install NodeJS for Debian-based distributions
+  include: "debian.yml"
+  when: ansible_os_family == "Debian"
+  tags: [ "nodejs", "packages" ]

@@ -1,2 +1,2 @@
 ---
-nodejs_major_version: "5"
+nodejs_version: "5.x"

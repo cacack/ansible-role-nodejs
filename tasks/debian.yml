@@ -8,6 +8,7 @@
 - name: Add NodeJS APT repository
   apt_repository:
     repo: "deb {{nodesource_repo_url}} {{ansible_distribution_release}} main"
+    #repo: "deb {{nodesource_repo_url}} {{ansible_lsb.codename}} main"
     state: present
     update_cache: yes
     #filename: "nodesource"
